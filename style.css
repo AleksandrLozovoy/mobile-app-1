@@ -1,0 +1,88 @@
+:root {
+  --color_bg: ;
+  --gradient: linear-gradient(to right, #a994e6, #7f78ee);
+  --grey: #f0f0f0;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Rubik", sans-serif;
+  background-color: #e0e5eb;
+  height: 100vh;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.mobile {
+  display: grid;
+  grid-template-rows: 48px 1fr 62px;
+  width: 350px;
+  height: 730px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: -5px 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.mobile__header,
+.mobile__footer {
+  align-self: center;
+  justify-self: center;
+}
+.mobile__content {
+  background-color: #fff;
+}
+
+/* UI - components */
+.selectbox {
+  width: max-content;
+  margin: 0 auto;
+  position: relative;
+}
+
+.selectbox__selected {
+  position: relative;
+  z-index: 1;
+  font-size: 18px;
+  font-weight: 500;
+  background-color: #fff;
+}
+.ic_arrow {
+  margin-left: 10px;
+  font-size: 0.7em;
+}
+.selectbox__list {
+  padding: 4px 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  border-radius: 3px;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.selectbox.open .selectbox__list {
+  top: 120%;
+  max-height: 200px;
+}
+
+.selectbox__item {
+  cursor: pointer;
+  transition: color 0.2s linear;
+}
+
+.selectbox__item.selected,
+.selectbox__item:hover {
+  color: #7f78ee;
+  font-weight: 500;
+}
+
+.selectbox__item:not(:last-child) {
+  margin-bottom: 4px;
+}
