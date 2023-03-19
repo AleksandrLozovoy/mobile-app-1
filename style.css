@@ -38,7 +38,9 @@ body {
 
 .rooms {
   display: grid;
-  grid-template-columns: repeat(2, 150px);
+  display: none;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 0 20px;
   justify-content: center;
   align-items: center;
   grid-gap: 14px;
@@ -67,6 +69,98 @@ body {
 
 .room.selected i {
   opacity: 1;
+}
+
+.rooms {
+  display: grid;
+  display: none;
+  grid-template-columns: repeat(2, 150px);
+  justify-content: center;
+  align-items: center;
+  grid-gap: 14px;
+}
+
+/* Настройки комнаты */
+.settings {
+  padding: 0 20px;
+}
+.settings__tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 94px;
+  grid-gap: 14px;
+}
+.settings__type {
+  display: grid;
+  grid-auto-rows: 2fr 1fr;
+  cursor: pointer;
+  font-size: 12px;
+  text-align: center;
+  background: var(--grey);
+  border-radius: 12px;
+}
+
+.settings__type i {
+  align-self: center;
+  font-size: 3em;
+  opacity: 0.7;
+}
+
+.settings__type.selected {
+  background: var(--gradient);
+  color: white;
+}
+
+.settings__type.selected i {
+  opacity: 1;
+}
+
+.settings__screen-title {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-weight: 300;
+  text-align: center;
+}
+/* Слайдер температуры */
+.temperature-btn {
+  width: 240px;
+  margin: 0 auto;
+}
+.dots-box {
+}
+.dots {
+  fill: transparent;
+  stroke: var(--grey);
+  stroke-width: 3px;
+  stroke-linecap: round;
+  stroke-dasharray: 0 21;
+}
+
+.line {
+  fill: transparent;
+  stroke: var(--grey);
+  stroke-width: 1px;
+  stroke-dasharray: 276 276;
+  transform: rotate(48deg);
+  transform-origin: center;
+}
+.line-active {
+  fill: transparent;
+  stroke: black;
+  stroke-width: 1px;
+  stroke-dasharray: 274 276;
+  transform: rotate(48deg);
+  transform-origin: center;
+}
+
+.round {
+  fill: transparent;
+  stroke: var(--grey);
+  stroke-width: 6px;
+  stroke-linecap: round;
+  stroke-dasharray: 0 276;
+  transform: rotate(48deg);
+  transform-origin: center;
 }
 /* UI - components */
 .selectbox {
